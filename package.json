@@ -1,0 +1,11 @@
+{
+  "name": "TodoList",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev" : "cd packages/server && pnpm nodemon index && cd ../client && pnpm dev"
+  },
+  "keywords": [],
+  "author": "ZoxDev",
+  "license": "ISC"
+}
