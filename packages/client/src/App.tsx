@@ -2,6 +2,7 @@ import './App.css'
 
 // Components
 import TodoCreate from './components/TodoCreate/TodoCreate'
+import TodoList from './components/TodoList/TodoList'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <main className='app_container'>
         <TodoCreate />
+        <TodoList/>
       </main>
 
     </>
