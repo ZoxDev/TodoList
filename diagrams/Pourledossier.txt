@@ -1,0 +1,7 @@
+Parler de :
+L'uml + pres
+Comment postgres fonctionne
+C'est quoi une api rest
+Comment j'ai fais
+c'est quoi express 
++ ce qu'il faut en plus 

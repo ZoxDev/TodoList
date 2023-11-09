@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const pool = require("./db");
+
+app.use(express.json()); //req.body
 
 //middleware
 app.use(cors());
-app.use(express.json()); //req.body
 
 //ROUTES//
+app.use("/todos", require("./routes/todocrud"));
 
 // Listen on port 5000
 app.listen(5000, () => {
