@@ -1,4 +1,8 @@
+// Css
+import "./TodoList.css"
+
 // Components
+import UpdateTodo from "../UpdateTodo/UpdateTodo";
 
 // Utils
 import { useState, useEffect } from "react"
@@ -28,15 +32,20 @@ export default function TodoList() {
 
     return (
         <>
-            {data.map((todo) => {
-                return (
-                    <div key={todo.id} className="todo">
-                        <p>{todo.title}</p>
-                        <p>{todo.description}</p>
-                        <p>{todo.actualstate}</p>
-                    </div>
-                )
-            })}
+            <section className="todos_list">
+                {data.map((todo) => {
+                    return (
+                        <div key={todo.id} className="todo_item">
+                            <span className="todo_item_title">{todo.title}</span>
+                            <span className="todo_item_description">{todo.description}</span>
+                            <UpdateTodo id={todo.id} title={todo.title} description={todo.description} />
+                            {/* Todo / Doing Component */}
+                            {/* Todo Valid */}
+                            {/* Todo Delete */}
+                        </div>
+                    )
+                })}
+            </section>
         </>
     )
 }

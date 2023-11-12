@@ -1,0 +1,40 @@
+.todos_list{
+    width: 100%;
+    height: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo_item{
+    width: 90vw;
+    height: 5vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border: 5px solid rgb(168, 168, 168);
+    border-radius: 10px;
+
+    background-color: white;
+}
+
+.todo_item_title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    background-color: white;
+}
+
+.todo_item_description{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    background-color: white;
+}
