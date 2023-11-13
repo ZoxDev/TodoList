@@ -5,6 +5,7 @@ import "./TodoList.css"
 import UpdateTodo from "../UpdateTodo/UpdateTodo";
 import TodoState from "../TodoState/TodoState";
 import TodoValid from "../ValidTodo/ValidTodo";
+import TodoDelete from "../DeleteTodo/DeleteTodo";
 
 // Utils
 import { useState, useEffect } from "react"
@@ -47,7 +48,7 @@ export default function TodoList() {
                                 <UpdateTodo id={todo.id} title={todo.title} description={todo.description} />
                                 <TodoState id={todo.id} actualstate={todo.actualstate}/>
                                 <TodoValid id={todo.id}/>
-                                {/* Todo Delete */}
+                                <TodoDelete id={todo.id}/>
                             </div>
                         </div>
                     )
