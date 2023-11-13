@@ -3,6 +3,7 @@ import "./TodoList.css"
 
 // Components
 import UpdateTodo from "../UpdateTodo/UpdateTodo";
+import TodoState from "../TodoState/TodoState";
 
 // Utils
 import { useState, useEffect } from "react"
@@ -14,7 +15,7 @@ export default function TodoList() {
         id: number;
         title: string;
         description: string;
-        actualstate: boolean;
+        actualstate: number;
     }
 
     // Collect the data from the API
@@ -24,11 +25,14 @@ export default function TodoList() {
         try {
             fetch('http://localhost:5000/todos')
                 .then(response => response.json())
-                .then(data => setData(data));
+                .then(data => {
+                    const sortedData = data.sort((a: dataInterface, b: dataInterface) => b.actualstate - a.actualstate);
+                    setData(sortedData);
+                });
         } catch (error) {
             console.error(error);
         }
-    }, [])
+    }, [data])
 
     return (
         <>
@@ -38,10 +42,12 @@ export default function TodoList() {
                         <div key={todo.id} className="todo_item">
                             <span className="todo_item_title">{todo.title}</span>
                             <span className="todo_item_description">{todo.description}</span>
-                            <UpdateTodo id={todo.id} title={todo.title} description={todo.description} />
-                            {/* Todo / Doing Component */}
-                            {/* Todo Valid */}
-                            {/* Todo Delete */}
+                            <div className="todo_options">
+                                <UpdateTodo id={todo.id} title={todo.title} description={todo.description} />
+                                <TodoState id={todo.id} actualstate={todo.actualstate}/>
+                                {/* Todo Valid */}
+                                {/* Todo Delete */}
+                            </div>
                         </div>
                     )
                 })}

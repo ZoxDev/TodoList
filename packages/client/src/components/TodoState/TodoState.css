@@ -1,0 +1,14 @@
+.state_svg{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+}
+.state_svg:hover{
+    cursor: pointer;
+    scale: 1.1;
+    transition: 0.1s ease-in-out;
+}
+.state_svg:not(:hover){
+    scale: 1;
+    transition: 0.1s ease-in-out;
+}
